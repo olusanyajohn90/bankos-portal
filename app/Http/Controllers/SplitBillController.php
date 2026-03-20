@@ -171,7 +171,7 @@ class SplitBillController extends Controller
                     'currency'    => $account->currency ?? 'NGN',
                     'description' => 'Split bill payment — ' . $participant->name . ' (' . $bill->title . ')',
                     'status'      => 'success',
-                    'performed_by'=> $customer->id,
+                    'performed_by'=> null, // portal-initiated
                 ]);
             }
 

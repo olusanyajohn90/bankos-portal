@@ -408,7 +408,7 @@ class SavingsGroupController extends Controller
                             'currency'     => $payoutAccount->currency ?? 'NGN',
                             'description'  => 'Group savings payout — ' . $group->name . ' (Cycle ' . $group->current_cycle . ')',
                             'status'       => 'success',
-                            'performed_by' => $recipient->customer_id,
+                            'performed_by' => null, // portal-initiated
                         ]);
                     }
                 }

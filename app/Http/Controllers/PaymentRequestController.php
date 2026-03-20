@@ -91,7 +91,7 @@ class PaymentRequestController extends Controller
                     'account_id' => $account->id, 'reference' => 'PAY-' . strtoupper(Str::random(10)),
                     'type' => 'deposit', 'amount' => $req->amount, 'currency' => $req->currency,
                     'description' => 'Payment from ' . $request->payer_name . ($req->description ? ' — ' . $req->description : ''),
-                    'status' => 'success', 'performed_by' => $req->customer_id,
+                    'status' => 'success', 'performed_by' => null, // portal-initiated
                 ]);
             }
             $req->update(['status' => 'paid', 'paid_at' => now(), 'paid_by_name' => $request->payer_name]);
